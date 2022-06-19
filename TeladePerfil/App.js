@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>TELA DE PROFILE</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <SafeAreaView style={styles.container}>
+      <View >
+        <StatusBar backgroundColor={"grey"} barStyle="dark-content"/>
+        <Text style={styles.text}>TELA DE PROFILE</Text>
+        <StatusBar style="auto"/>
+      </View>
+    </SafeAreaView>
   );
 }
 
