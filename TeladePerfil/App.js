@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Image, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Pressable, Text, Image, View, SafeAreaView } from 'react-native';
+
 
 
 const colorGithub = '#010409';
@@ -16,15 +17,32 @@ export default function App() {
         <Image accessibilitylabel='Gleiciane foto de perfil com fundo branco' 
         style={styles.avatar} source={{uri:imageGithub}}/>
 
-       <Text style ={[styles.defaultText, styles.name]}>Gleiciane Galdino</Text>
-       <Text style ={[styles.defaultText, styles.nickname]}>Gleicianegaldino</Text>
-       <Text style ={[styles.defaultText, styles.description]}>Internet Systems Student┇ MySQL┇ PHP┇ 
-       JavaScript┇ Bootstrap┇ HTML5┇ CSS3┇ Java┇ React Native</Text>
- 
+       <Text 
+       accessibilitylabel='Nome: Gleiciane Galdino'
+       style ={[styles.defaultText, styles.name]}>Gleiciane Galdino
+       </Text>
+       
+       <Text 
+       accessibilitylabel='Nickname: Gleicianegaldino'
+       style ={[styles.defaultText, styles.nickname]}>Gleicianegaldino
+       </Text>
+       
+       <Text 
+       accessibilitylabel='Descrição: Internet Systems Student┇ MySQL┇ PHP┇ JavaScript┇ Bootstrap┇ HTML5┇ CSS3┇ Java┇ React Native'
+       style ={[styles.defaultText, styles.description]}>Internet Systems Student┇ MySQL┇ PHP┇ 
+       JavaScript┇ Bootstrap┇ HTML5┇ CSS3┇ Java┇ React Native
+       </Text>
+
+        <Pressable onPress={() => console.log('gitbub')}>
+          <View style={styles.button}>
+          <Text style={[styles.textButton, styles.defaultText]}> Open in Github</Text>
+          </View>
+        </Pressable>
+        
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -67,6 +85,19 @@ const styles = StyleSheet.create({
       borderRadius:100,
       borderColor: '#ffffff',
       borderWidth: 2,
+    },
+
+    button:{
+      marginTop: 20,
+      backgroundColor: colorDarkGithubLetra,
+      borderRadius: 10,
+      padding:20,
+    },
+
+    textButton:{
+      fontWeight: 'bold',
+    fontSize:16,
+
     },
 
 });
