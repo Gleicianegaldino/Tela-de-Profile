@@ -1,4 +1,4 @@
-# Tela-de-Perfil
+# Tela de Profile
 
 O projeto foi desenvolvido através do Bootcamp Decola Tech 3° edição, seu objetivo é criar um aplicativo utilizando React Native, o aplicativo conta com uma tela inicial
 onde o usuário poderá visualizar uma breve descrição sobre mim e ao clicar no botão será encaminado para meu perfil no Github.
