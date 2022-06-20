@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Pressable, Text, Image, View, SafeAreaView } from 'react-native';
+import React from 'react';
+import { StyleSheet, Linking, Pressable, Text, Image, View, SafeAreaView } from 'react-native';
 
 
 
@@ -7,8 +8,22 @@ const colorGithub = '#010409';
 const imageGithub = 'https://avatars.githubusercontent.com/u/78940661?s=400&u=dbf6b4edb4f6ac84fb95ce7488afac811fa104d2&v=4';
 const colorGithubLetra = '#C9D1D9';
 const colorDarkGithubLetra = '#4F565E';
+const urlGithub ='https://github.com/Gleicianegaldino';
 
 export default function App() {
+
+  const handlePressGoToGithub = async () => {
+  console.log("Verificando link");
+
+  const res = await Linking.canOpenURL(urlGithub);
+  
+    if(res){
+      console.log("Link aprovado");
+      console.log("Abrindo link")
+      await Linking.canOpenURL(urlGithub);
+    }
+  };
+
   return (
 
     <SafeAreaView style={styles.container}>
@@ -33,7 +48,7 @@ export default function App() {
        JavaScript┇ Bootstrap┇ HTML5┇ CSS3┇ Java┇ React Native
        </Text>
 
-        <Pressable onPress={() => console.log('gitbub')}>
+        <Pressable onPress={handlePressGoToGithub}>
           <View style={styles.button}>
           <Text style={[styles.textButton, styles.defaultText]}> Open in Github</Text>
           </View>
@@ -42,7 +57,7 @@ export default function App() {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
